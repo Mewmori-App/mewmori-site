@@ -6,10 +6,7 @@
 <title>Пресс-кит Mewmori</title>
 <meta name="description" content="Всё, что нужно, чтобы написать про Mewmori: тексты трёх длин, логотипы, иконка, скриншоты, гифки и проверенные цифры. Одним архивом или по частям — как удобнее.">
 <link rel="canonical" href="https://mewmori.com/press.html">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" href="/assets/icon.png" type="image/png" sizes="512x512">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="alternate" hreflang="ru" href="https://mewmori.com/press.html">
 <link rel="alternate" hreflang="en" href="https://mewmori.com/en/press.html">
@@ -61,6 +58,17 @@ blockquote.quote-card cite { font-style: normal; color: var(--text-3); font-size
 .asset.on-dark .asset-note { color: #9ea1ab; }
 .asset-links a:hover, .asset.on-dark .asset-links a:hover { color: var(--accent); }
 
+.mentions { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 18px; }
+.mention { padding: 20px 22px; filter: var(--drop); position: relative; }
+.mention::before, .mention::after { content: ""; position: absolute; z-index: -1; clip-path: var(--shape); }
+.mention::before { inset: 0; background: var(--ink); }
+.mention::after { inset: var(--bw); background: var(--surface); }
+.mention h3 { margin: 0 0 6px; font-size: 23px; line-height: 1.2; }
+.mention h3 a { color: var(--text); }
+.mention h3 a:hover { color: var(--accent); }
+.mention p { margin: 0; line-height: 1.4; }
+.mention-meta { color: var(--text-3); font-size: 17px; margin-bottom: 12px !important; }
+
 .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 18px; }
 .shot { margin: 0; }
 .shot img { width: 100%; height: auto; display: block; border: 3px solid var(--ink); filter: var(--drop); }
@@ -88,6 +96,7 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
       <a href="#shots">Скриншоты</a>
       <a href="#gifs">Гифки</a>
       <a href="#facts">Фактура</a>
+      <a href="#mentions">Упоминания</a>
     </nav>
     <span class="lang"><a href="#" data-lang="ru" aria-current="true">RU</a><span>/</span><a href="en/press.html" data-lang="en">EN</a></span>
   </div>
@@ -115,7 +124,7 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
           <button class="copy" type="button" data-copy="text-sentence"
                   data-done="Скопировано">Скопировать</button>
         </div>
-        <div class="press-text" id="text-sentence"><p>Mewmori — пиксельный кот, который живёт на рабочем столе Mac, знакомится с тобой и помнит ваши разговоры: языковая модель работает прямо на компьютере, поэтому ничего не уходит в облако.</p></div>
+        <div class="press-text" id="text-sentence"><p>Mewmori — пиксельный кот, который живёт на рабочем столе Mac, знакомится с тобой и помнит ваши разговоры: языковая модель работает прямо на компьютере, а реплики, содержимое экрана и память не покидают Mac.</p></div>
       </div>
       <div class="quote-card">
         <div class="press-head">
@@ -123,7 +132,7 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
           <button class="copy" type="button" data-copy="text-fifty"
                   data-done="Скопировано">Скопировать</button>
         </div>
-        <div class="press-text" id="text-fifty"><p>Mewmori — десктопный питомец для macOS, который ведёт себя как кот, а помнит как друг. Он спрашивает, как тебя зовут, имя ему выбираешь ты, замечает, чем ты занят, и возвращается к этому через неделю. Языковая модель на 1,4 ГБ работает прямо на компьютере: разговоры, экран и память не покидают Mac.</p></div>
+        <div class="press-text" id="text-fifty"><p>Mewmori — десктопный питомец для macOS, который ведёт себя как кот, а помнит как друг. Он спрашивает, как тебя зовут, имя ему выбираешь ты, замечает, чем ты занят, и возвращается к этому через неделю. Языковая модель на 1,4 ГБ работает прямо на компьютере: реплики, содержимое экрана и память не покидают Mac.</p></div>
       </div>
       <div class="quote-card">
         <div class="press-head">
@@ -132,8 +141,8 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
                   data-done="Скопировано">Скопировать</button>
         </div>
         <div class="press-text" id="text-hundred_fifty"><p>Mewmori — пиксельный кот, который живёт на рабочем столе Mac и постепенно узнаёт хозяина. Знакомство занимает пять актов: кот спрашивает имя, получает имя от тебя, расспрашивает о делах — и с этого момента помнит. Не «историю чата», а факты: чем ты занимаешься, что любишь, над чем работал на прошлой неделе. Через неделю он сам вернётся к тому разговору.</p>
-<p>Всё это держится на языковой модели Qwen 3.5 (2B), которая работает на самом компьютере. Модель весит 1,4 ГБ и скачивается только тогда, когда ты впервые захочешь поговорить; отказаться можно, кот останется живым. Ни реплики, ни содержимое экрана, ни память никуда не отправляются — сервера у Mewmori просто нет, как нет и регистрации.</p>
-<p>Помимо разговоров кот живёт своей жизнью: замечает, что происходит на экране, просит еды, носится как бешеный, играет в прятки и крестики-нолики, выращивает травы в огороде и ходит в экспедиции. Приложение бесплатное и весит 26 МБ; платные — только скины и аксессуары.</p></div>
+<p>Всё это держится на языковой модели Qwen 3.5 (2B), которая работает на самом компьютере. Модель весит 1,4 ГБ и скачивается только тогда, когда ты впервые захочешь поговорить; отказаться можно, кот останется живым. Реплики, содержимое экрана и память не отправляются с Mac; регистрации нет.</p>
+<p>Помимо разговоров кот живёт своей жизнью: замечает, что происходит на экране, просит еды, носится как бешеный, играет в прятки и крестики-нолики, выращивает травы в огороде и ходит в экспедиции. Приложение бесплатное и весит 27,8 МБ; платные — только скины и аксессуары.</p></div>
       </div>
   </div>
 </section>
@@ -199,9 +208,9 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
       </figure>
       <figure class="shot">
         <a href="assets/press/screenshots/ru/03-wardrobe.png">
-          <img src="assets/press/screenshots/ru/03-wardrobe.png" alt="Гардероб: 14 котов и 22 предмета, классический кот идёт в комплекте" loading="lazy">
+          <img src="assets/press/screenshots/ru/03-wardrobe.png" alt="Гардероб: 22 предмета, классический кот идёт в комплекте" loading="lazy">
         </a>
-        <figcaption>Гардероб: 14 котов и 22 предмета, классический кот идёт в комплекте</figcaption>
+        <figcaption>Гардероб: 22 предмета, классический кот идёт в комплекте</figcaption>
       </figure>
       <figure class="shot">
         <a href="assets/press/screenshots/ru/04-garden.png">
@@ -249,23 +258,42 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
   <table class="facts">
     <tbody>
         <tr><td>Что это</td><td>Десктопный питомец для macOS с локальной языковой моделью и долгой памятью</td></tr>
-        <tr><td>Версия</td><td>1.0.13</td></tr>
+        <tr><td>Версия</td><td>1.0.21</td></tr>
         <tr><td>Система</td><td>macOS 14.6 и новее</td></tr>
         <tr><td>Процессор</td><td>Универсальная сборка: Apple Silicon и Intel</td></tr>
-        <tr><td>Размер</td><td>26 МБ загрузка, около 45 МБ на диске</td></tr>
+        <tr><td>Размер</td><td>27,8 МБ загрузка, около 47 МБ на диске</td></tr>
         <tr><td>Модель</td><td>Qwen 3.5 (2B), 1,4 ГБ — качается отдельно и только по согласию; без неё кот работает</td></tr>
         <tr><td>Память устройства</td><td>От 4 ГБ ОЗУ для разговоров</td></tr>
         <tr><td>Память в работе</td><td>Около 400 МБ с загруженной моделью — предварительный замер на MacBook Pro M3 Max</td></tr>
-        <tr><td>Приватность</td><td>Ноль телеметрии разговоров: реплики, содержимое экрана и память не покидают компьютер</td></tr>
+        <tr><td>Приватность</td><td>Реплики, содержимое экрана и память не покидают компьютер</td></tr>
         <tr><td>Аккаунт</td><td>Не нужен. Регистрации нет, покупка живёт в лицензионном ключе</td></tr>
-        <tr><td>Цена</td><td>Приложение бесплатное. Платные только скины и аксессуары, 99–1990 ₽ (60–1170 ⭐ в Telegram Stars), бессрочно</td></tr>
-        <tr><td>Содержимое</td><td>14 котов, 22 предмета гардероба, 5 занятий: прятки, догонялки, кликер, крестики-нолики, огород с экспедициями</td></tr>
+        <tr><td>Цена</td><td>Приложение бесплатное. Платные только скины и аксессуары, 99–1990 ₽ (90–1780 ⭐ в Telegram Stars), бессрочно</td></tr>
+        <tr><td>Содержимое</td><td>15 котов, 22 предмета гардероба, 5 занятий: прятки, догонялки, кликер, крестики-нолики, огород с экспедициями</td></tr>
         <tr><td>Языки</td><td>Русский и английский, переключаются по языку системы</td></tr>
         <tr><td>Обновления</td><td>Sparkle, внутри приложения</td></tr>
         <tr><td>Разработчик</td><td>Максим Гришутин, один человек</td></tr>
     </tbody>
   </table>
   <p class="note">Название читается двумя способами: mew + memory — кот, который тебя помнит, — и memento mori. Второе прочтение авторское и намеренное.</p>
+</section>
+
+<section class="band">
+  <div class="wrap" id="mentions">
+    <h2>Внешние упоминания</h2>
+    <p class="sub">Материалы, опубликованные не в каналах Mewmori.</p>
+    <div class="mentions">
+      <article class="mention">
+        <h3><a href="https://appleinsider.ru/obzory-prilozhenij/zavyol-ii-kota-na-mac-s-nim-mozhno-boltat-igrat-i-zadavat-lyubye-voprosy.html" target="_blank" rel="noopener noreferrer">AppleInsider</a></h3>
+        <p class="mention-meta">19 августа 2026 · материал об Mewmori</p>
+        <p>«Я завел ИИ-кота на Mac. Он отвечает на любые вопросы, умеет болтать и играть прямо на экране компьютера».</p>
+      </article>
+      <article class="mention">
+        <h3><a href="https://podcasts.apple.com/de/podcast/ai-%D0%B1%D1%83%D0%BC-%D0%BD%D0%B0-%243-%D1%82%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%B0-%D0%B3%D0%BE%D1%81%D0%B4%D0%BE%D0%BB%D0%B3-%D1%81%D1%88%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%BB-%D0%B7%D0%B0-%2440/id1457434451?i=1000785404114" target="_blank" rel="noopener noreferrer">RationalAnswer · Павел Комаровский</a></h3>
+        <p class="mention-meta">24 августа 2026 · подкаст, 32 минуты</p>
+        <p>«Нейромуха против нейрокотана» — Mewmori упомянут на 24:43; в описании выпуска есть ссылка на сайт.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section class="band">
@@ -286,7 +314,7 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
   <h2>Что можно</h2>
   <p>Логотип, иконку, скриншоты и гифки можно свободно использовать в материалах о Mewmori — в статьях, обзорах, видео и подборках. Разрешение спрашивать не нужно. Просьба одна: не менять логотип и не выдавать материалы за что-то другое.</p>
   <h2 style="margin-top:34px">Связь</h2>
-  <p>Пишите на почту — отвечаю сам и быстро. Если нужна сборка до релиза, доступ к платным скинам для обзора или ответ на вопрос, которого нет на этой странице, просто попросите.</p>
+  <p>Пишите на почту — отвечаю сам и быстро. Если нужны дополнительные скриншоты, доступ к платным скинам для обзора или ответ на вопрос, которого нет на этой странице, просто попросите.</p>
   <p><a href="mailto:support@mewmori.com">support@mewmori.com</a> ·
      <a href="https://t.me/prefire_ios">Telegram</a></p>
 </section>
@@ -337,6 +365,5 @@ document.addEventListener('click', function (event) {
 });
 </script>
 
-<script src="assets/src.js" defer></script>
 </body>
 </html>

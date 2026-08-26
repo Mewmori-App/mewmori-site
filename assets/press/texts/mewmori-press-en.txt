@@ -1,19 +1,19 @@
 MEWMORI PRESS KIT
 
-Mewmori 1.0.13
+Mewmori 1.0.21
 https://mewmori.com
 
 ============================================================
 ONE SENTENCE
 ============================================================
 
-Mewmori is a pixel cat that lives on your Mac desktop, gets to know you and remembers your conversations — the language model runs on the machine itself, so nothing goes to the cloud.
+Mewmori is a pixel cat that lives on your Mac desktop, gets to know you and remembers your conversations — the language model runs on the machine itself, while replies, screen contents and memories stay on your Mac.
 
 ============================================================
 50 WORDS
 ============================================================
 
-Mewmori is a desktop pet for macOS that behaves like a cat and remembers like a friend. It asks your name, takes the one you give it, notices what you are working on, and brings it up a week later. A 1.4 GB model runs locally: nothing leaves your Mac.
+Mewmori is a desktop pet for macOS that behaves like a cat and remembers like a friend. It asks your name, takes the one you give it, notices what you are working on, and brings it up a week later. A 1.4 GB model runs locally: replies, screen contents and memories stay on your Mac.
 
 ============================================================
 150 WORDS
@@ -21,7 +21,7 @@ Mewmori is a desktop pet for macOS that behaves like a cat and remembers like a 
 
 Mewmori is a pixel cat that lives on your Mac desktop and gets to know you. A five-act introduction has it ask your name, receive one from you, and ask what you do — and from then on it remembers. Not a chat history, but facts: what you work on, what you like, what kept you busy.
 
-It all runs on Qwen 3.5 (2B), a language model that works on the computer itself. The model weighs 1.4 GB and downloads only when you first want to talk; decline, and the cat still lives. No replies, screen contents or memories are ever sent anywhere — Mewmori has no server and no sign-up.
+It all runs on Qwen 3.5 (2B), a language model that works on the computer itself. The model weighs 1.4 GB and downloads only when you first want to talk; decline, and the cat still lives. Replies, screen contents and memories are not sent from your Mac, and there is no sign-up.
 
 The cat also lives its own life: it notices what is on your screen, begs for food, gets the zoomies, plays hide-and-seek and tic-tac-toe, grows herbs and goes on expeditions. The app is free; only skins and accessories are paid.
 
@@ -30,17 +30,17 @@ FACT SHEET
 ============================================================
 
 What it is      A macOS desktop pet with a local language model and long-term memory
-Version         1.0.13
+Version         1.0.21
 System          macOS 14.6 or newer
 Processor       Universal binary: Apple Silicon and Intel
-Size            26 MB download, about 45 MB on disk
+Size            27.8 MB download, about 47 MB on disk
 Model           Qwen 3.5 (2B), 1.4 GB — downloaded separately and only with consent; the cat works without it
 Memory          4 GB RAM or more for conversations
 Memory in use   About 400 MB with the model loaded — preliminary measurement on a MacBook Pro M3 Max
-Privacy         Zero conversation telemetry: replies, screen contents and memories never leave the computer
+Privacy         Replies, screen contents and memories never leave the computer
 Account         None. No sign-up; a purchase lives in a licence key
-Price           The app is free. Only skins and accessories are paid, 99–1990 ₽ (60–1170 ⭐ in Telegram Stars), one-time
-Contents        14 cats, 22 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
+Price           The app is free. Only skins and accessories are paid, 99–1990 ₽ (90–1780 ⭐ in Telegram Stars), one-time
+Contents        15 cats, 22 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
 Languages       Russian and English, following the system language
 Updates         Sparkle, in-app
 Developer       Maxim Grishutin, a one-person project
@@ -56,6 +56,20 @@ QUOTES FROM THE DEVELOPER
     — Maxim Grishutin, on why the model runs locally
 
 ============================================================
+EXTERNAL COVERAGE
+============================================================
+
+AppleInsider
+19 August 2026 · Mewmori feature
+A Russian-language feature on putting an AI cat on a Mac desktop.
+https://appleinsider.ru/obzory-prilozhenij/zavyol-ii-kota-na-mac-s-nim-mozhno-boltat-igrat-i-zadavat-lyubye-voprosy.html
+
+RationalAnswer · Pavel Komarovsky
+24 August 2026 · 32-minute podcast
+Mewmori appears at 24:43 in “Neurofly vs. Neurocat”; the episode notes link to the site.
+https://podcasts.apple.com/de/podcast/ai-%D0%B1%D1%83%D0%BC-%D0%BD%D0%B0-%243-%D1%82%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%B0-%D0%B3%D0%BE%D1%81%D0%B4%D0%BE%D0%BB%D0%B3-%D1%81%D1%88%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%BB-%D0%B7%D0%B0-%2440/id1457434451?i=1000785404114
+
+============================================================
 WHAT YOU MAY DO
 ============================================================
 
@@ -65,7 +79,7 @@ The logo, icon, screenshots and GIFs may be used freely in coverage of Mewmori �
 CONTACT
 ============================================================
 
-Email me — I answer personally and quickly. If you need a pre-release build, access to the paid skins for a review, or an answer that isn't on this page, just ask.
+Email me — I answer personally and quickly. If you need additional screenshots, access to the paid skins for a review, or an answer that isn't on this page, just ask.
 
 Email: support@mewmori.com
 Site: https://mewmori.com
