@@ -446,20 +446,24 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
   100% { transform: translateY(0); }
 }
 
-/* Кот гуляет по нижнему краю первого экрана и разворачивается у стенок */
+/* Кот гуляет по нижнему краю первого экрана и разворачивается у стенок.
+   Едет на transform, а не на left: left пересчитывает раскладку героя каждый
+   кадр, и на части машин кнопка "Скачать" из-за этого теряла свою drop-shadow
+   через кадр - тень мерцала. Ширину прогона в пикселях кладёт fun.js, потому
+   что проценты в translateX меряются по самому коту, а не по герою. */
 .hero { position: relative; overflow: hidden; }
 .walker {
-  position: absolute; bottom: 0; left: -70px;
+  position: absolute; bottom: 0; left: 0;
   width: 58px; image-rendering: pixelated; pointer-events: none;
   animation: walk 26s linear infinite;
-  will-change: left;
+  will-change: transform;
 }
 @keyframes walk {
-  0%   { left: -70px; transform: scaleX(1); }
-  49%  { left: 100%;  transform: scaleX(1); }
-  50%  { left: 100%;  transform: scaleX(-1); }
-  99%  { left: -70px; transform: scaleX(-1); }
-  100% { left: -70px; transform: scaleX(1); }
+  0%   { transform: translateX(-70px) scaleX(1); }
+  49%  { transform: translateX(var(--walk-span, 100vw)) scaleX(1); }
+  50%  { transform: translateX(var(--walk-span, 100vw)) scaleX(-1); }
+  99%  { transform: translateX(-70px) scaleX(-1); }
+  100% { transform: translateX(-70px) scaleX(1); }
 }
 
 /* Кот в герое кликабельный — по клику говорит */

@@ -66,6 +66,20 @@
     // Путь берём от героя, чтобы не гадать про базовый адрес сайта
     walker.src = cat.getAttribute('src').replace(/[^/]+\.png$/, 'white_cat.png');
     hero.appendChild(walker);
+
+    // Прогон отдаём в CSS в пикселях: анимация едет на transform, а проценты
+    // в translateX меряются по ширине кота, а не по ширине героя. Следим
+    // ResizeObserver'ом, а не событием resize: герой меняет ширину и без него -
+    // например когда подгрузился шрифт или появился скроллбар.
+    var setWalkSpan = function () {
+      walker.style.setProperty('--walk-span', hero.clientWidth + 'px');
+    };
+    setWalkSpan();
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(setWalkSpan).observe(hero);
+    } else {
+      window.addEventListener('resize', setWalkSpan);
+    }
   }
 
   // --- появление блоков при прокрутке ---
