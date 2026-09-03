@@ -189,6 +189,35 @@ section .sub { color: var(--text-2); margin: 0 0 28px; }
 .card h3 { margin: 0 0 8px; font-size: 23px; font-weight: 700; }
 .card p { margin: 0; color: var(--text-2); font-size: 19px; }
 
+/* Метка готовности платформы в секции «Скоро не только на Mac».
+   Три состояния - готово, вот-вот, в работе - берут готовые семантические
+   цвета темы. Текст на них всегда чернильный: --success и --warning светлые
+   в обеих темах, и белый по ним не читается. */
+.card .status {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  background: var(--surface-strong);
+  clip-path: var(--shape);
+}
+/* --success и --warning одинаково светлые в обеих темах, поэтому текст на них
+   всегда тёмный, а не var(--text): в тёмной теме тот стал бы белым по мятному.
+   Нейтральная метка, наоборот, ходит за темой обеими переменными. */
+.card .status.now { background: var(--success); color: #1c1f29; }
+.card .status.soon { background: var(--warning); color: #1c1f29; }
+
+/* Карточка платформы, которой ещё нет, не должна читаться как предложение её
+   скачать. Приглушаем текст, а не opacity карточки: opacity занята анимацией
+   появления (`.reveal.shown` в assets/fun.js), и спор за неё гасит анимацию. */
+.card.pending h3 { color: var(--text-2); }
+.card.pending p { color: var(--text-3); }
+
+.platform-note { margin: 26px 0 0; color: var(--text-2); font-size: 19px; }
+
 /* ---------- витрина ---------- */
 
 .grid-skins { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
