@@ -20,6 +20,9 @@
   --text-3: #737580;
   --inverted: #fafaf2;
   --accent: #8c6beb;
+  --accent-text: #6846c7;
+  --primary-action: #7350d5;
+  --focus: #6946cf;
   --success: #59d6c7;
   --warning: #ff9633;
   --danger: #ff575e;
@@ -51,6 +54,8 @@
     --text-2: #c8cad2;
     --text-3: #9ea1ab;
     --inverted: #14161d;
+    --accent-text: #b69cff;
+    --focus: #b69cff;
     --drop: drop-shadow(4px 4px 0 #000);
   }
 }
@@ -75,13 +80,18 @@ body {
 .narrow { max-width: 720px; }
 
 a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-text); }
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
 
 /* ---------- панель в стиле приложения ----------
    Рамка и заливка рисуются двумя слоями с одинаковым clip-path:
    нижний — цвет рамки, верхний — заливка, вписанная внутрь на --bw. */
 
-.panel, .card, .skin, .reaction, .box, .art, .faq details, .table-scroll, .button, .pay-methods span {
+.panel, .card, .skin, .box, .faq details, .table-scroll, .button, .pay-methods span {
   position: relative;
   background: transparent;
   border: 0;
@@ -90,11 +100,11 @@ a:hover { color: var(--accent); }
   filter: var(--drop);
 }
 
-.panel::before, .card::before, .skin::before, .reaction::before, .box::before,
-.art::before, .faq details::before, .table-scroll::before, .button::before,
+.panel::before, .card::before, .skin::before, .box::before,
+.faq details::before, .table-scroll::before, .button::before,
 .pay-methods span::before,
-.panel::after, .card::after, .skin::after, .reaction::after, .box::after,
-.art::after, .faq details::after, .table-scroll::after, .button::after,
+.panel::after, .card::after, .skin::after, .box::after,
+.faq details::after, .table-scroll::after, .button::after,
 .pay-methods span::after {
   content: "";
   position: absolute;
@@ -103,15 +113,15 @@ a:hover { color: var(--accent); }
   pointer-events: none;
 }
 
-.panel::before, .card::before, .skin::before, .reaction::before, .box::before,
-.art::before, .faq details::before, .table-scroll::before, .button::before,
+.panel::before, .card::before, .skin::before, .box::before,
+.faq details::before, .table-scroll::before, .button::before,
 .pay-methods span::before {
   inset: 0;
   background: var(--ink);
 }
 
-.panel::after, .card::after, .skin::after, .reaction::after, .box::after,
-.art::after, .faq details::after, .table-scroll::after, .button::after,
+.panel::after, .card::after, .skin::after, .box::after,
+.faq details::after, .table-scroll::after, .button::after,
 .pay-methods span::after {
   inset: var(--bw);
   background: var(--fill, var(--surface));
@@ -134,7 +144,7 @@ header.site .wrap {
 .brand img { width: 32px; height: 32px; }
 nav.site { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; font-size: 19px; }
 nav.site a { text-decoration: none; color: var(--text-2); }
-nav.site a:hover { color: var(--accent); }
+nav.site a:hover { color: var(--accent-text); }
 
 .lang { display: flex; gap: 6px; align-items: center; font-size: 17px; }
 .lang a { text-decoration: none; color: var(--text-3); }
@@ -151,15 +161,6 @@ nav.site a:hover { color: var(--accent); }
 .hero p.lead { font-size: clamp(20px, 2.6vw, 24px); color: var(--text-2); max-width: 640px; margin: 0 auto 28px; }
 
 .cat-hero { width: 180px; height: 180px; image-rendering: pixelated; margin: 0 auto 12px; display: block; }
-
-/* Рабочий стол в деле: кот замечает хозяина. Без звука и без управления —
-   это иллюстрация, а не проигрыватель. */
-.hero-demo { margin: 36px auto 0; max-width: 900px; }
-.hero-demo video {
-  display: block; width: 100%; height: auto;
-  border: 3px solid var(--ink); filter: var(--drop);
-}
-.hero-demo figcaption { margin-top: 14px; color: var(--text-2); font-size: 17px; }
 
 /* ---------- кнопки ---------- */
 
@@ -188,35 +189,6 @@ section .sub { color: var(--text-2); margin: 0 0 28px; }
 .card { padding: 20px; }
 .card h3 { margin: 0 0 8px; font-size: 23px; font-weight: 700; }
 .card p { margin: 0; color: var(--text-2); font-size: 19px; }
-
-/* Метка готовности платформы в секции «Скоро не только на Mac».
-   Три состояния - готово, вот-вот, в работе - берут готовые семантические
-   цвета темы. Текст на них всегда чернильный: --success и --warning светлые
-   в обеих темах, и белый по ним не читается. */
-.card .status {
-  display: inline-block;
-  margin: 0 0 10px;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--text);
-  background: var(--surface-strong);
-  clip-path: var(--shape);
-}
-/* --success и --warning одинаково светлые в обеих темах, поэтому текст на них
-   всегда тёмный, а не var(--text): в тёмной теме тот стал бы белым по мятному.
-   Нейтральная метка, наоборот, ходит за темой обеими переменными. */
-.card .status.now { background: var(--success); color: #1c1f29; }
-.card .status.soon { background: var(--warning); color: #1c1f29; }
-
-/* Карточка платформы, которой ещё нет, не должна читаться как предложение её
-   скачать. Приглушаем текст, а не opacity карточки: opacity занята анимацией
-   появления (`.reveal.shown` в assets/fun.js), и спор за неё гасит анимацию. */
-.card.pending h3 { color: var(--text-2); }
-.card.pending p { color: var(--text-3); }
-
-.platform-note { margin: 26px 0 0; color: var(--text-2); font-size: 19px; }
 
 /* ---------- витрина ---------- */
 
@@ -267,35 +239,333 @@ code {
 
 .band { background: var(--surface); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
 
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.split .art { --fill: var(--bg); padding: 28px; text-align: center; }
-.split .art img { width: 150px; image-rendering: pixelated; }
-.split h2 { margin-bottom: 14px; }
-.split p { color: var(--text-2); margin: 0 0 14px; }
-
-.reactions { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
-.reaction { padding: 16px 18px; }
-.reaction .when { font-weight: 700; font-size: 20px; margin-bottom: 4px; }
-.reaction .then { color: var(--text-2); font-size: 19px; }
-
-.cat-strip { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 0 0 22px; }
-.cat-strip img { width: 76px; image-rendering: pixelated; }
-
 .faq { max-width: 720px; margin: 0 auto; }
 .faq details { padding: 14px 18px; margin-bottom: 14px; }
-.faq summary { font-weight: 700; cursor: pointer; list-style: none; font-size: 21px; }
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  gap: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  font-size: 21px;
+}
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; float: right; color: var(--text-3); font-weight: 700; }
+.faq summary::after { content: "+"; color: var(--text-3); font-weight: 700; }
 .faq details[open] summary::after { content: "–"; }
 .faq p { color: var(--text-2); margin: 12px 0 0; font-size: 19px; }
 
-.cta { text-align: center; padding-block: 60px; }
-.cta h2 { margin-bottom: 10px; }
-.cta p { color: var(--text-2); max-width: 560px; margin: 0 auto 24px; }
+.home {
+  --landing-section-space: clamp(48px, 7vw, 76px);
+  --landing-grid-gap: clamp(18px, 3vw, 28px);
+  --landing-copy-gap: 16px;
+}
 
-.social-link:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 4px;
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  color: var(--inverted);
+  background: var(--ink);
+  transform: translateY(calc(-100% - 16px));
+}
+.skip-link:focus { transform: translateY(0); }
+
+header.site.home-header .wrap {
+  min-height: 68px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.home-header .brand,
+.home-header nav.site a,
+.home-header .lang a,
+.home-header .lang > span:not([aria-hidden]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+.home-header nav.site { gap: 6px; }
+.home-header nav.site a { padding-inline: 9px; }
+.home-header .lang { font-size: 18px; }
+.home-header .lang a,
+.home-header .lang > span:not([aria-hidden]) {
+  padding-inline: 7px;
+  color: var(--text-3);
+}
+.home-header .lang [aria-current="page"] {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.landing-hero { padding-block: clamp(42px, 6vw, 64px) var(--landing-section-space); }
+.hero-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  gap: var(--landing-grid-gap);
+  align-items: center;
+}
+.hero-copy { max-width: 620px; }
+.landing-hero h1 {
+  margin: 0 0 var(--landing-copy-gap);
+  font-size: clamp(46px, 7.5vw, 74px);
+  font-weight: 700;
+  line-height: .96;
+  letter-spacing: .01em;
+}
+.landing-hero .lead {
+  max-width: 590px;
+  margin: 0 0 24px;
+  color: var(--text-2);
+  font-size: clamp(21px, 2.5vw, 25px);
+}
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-text);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.primary-action {
+  --fill: var(--primary-action);
+  min-height: 52px;
+  color: #fff;
+}
+.primary-action:hover { color: #fff; }
+.landing-hero .note { max-width: 600px; margin: 14px 0 0; color: var(--text-2); }
+.landing-hero .note + .note { margin-top: 6px; }
+
+.hero-cat-stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: 286px;
+  text-align: center;
+}
+.hero-cat {
+  display: grid;
+  justify-items: center;
+  min-width: 180px;
+  min-height: 220px;
+  padding: 8px 14px;
+  color: var(--text);
+  font: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.hero-cat .cat-hero {
+  width: 172px;
+  height: 172px;
+  margin: 0;
+  image-rendering: pixelated;
+}
+.hero-cat-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 14px;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.hero-cat:hover .hero-cat-label { color: var(--accent-text); }
+.hero-cat-hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.cat-say {
+  align-self: end;
+  min-width: 180px;
+  min-height: 48px;
+  margin: 0 0 6px;
+  padding: 9px 14px;
+  font-size: 18px;
+  text-align: center;
+}
+.cat-say:empty { visibility: hidden; }
+
+/* Нативный проигрыватель запускается только пользователем. */
+.hero-demo { position: relative; max-width: 720px; margin: 30px auto 0; text-align: center; }
+.hero-demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--ink);
+  filter: var(--drop);
+}
+.hero-demo figcaption { margin-top: 12px; color: var(--text-2); font-size: 18px; }
+.video-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.video-status.is-error {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  margin: 8px 0 0;
+  color: var(--danger);
+  font-size: 17px;
+}
+
+.landing-section { padding-block: var(--landing-section-space); }
+.landing-band {
+  background: var(--surface);
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+.landing-section h2 { margin-bottom: 14px; }
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--landing-grid-gap);
+  margin-top: 28px;
+}
+.feature-card { padding: clamp(20px, 3vw, 28px); }
+.feature-card h3 { margin: 0 0 8px; font-size: 24px; line-height: 1.15; }
+.feature-card p { margin: 0; color: var(--text-2); font-size: 19px; }
+
+.privacy-proof {
+  --fill: var(--surface);
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  gap: var(--landing-grid-gap);
+  padding: clamp(24px, 5vw, 44px);
+}
+.privacy-proof p { margin: 0 0 14px; color: var(--text-2); }
+.privacy-proof .eyebrow { color: var(--accent-text); }
+.text-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+
+.cats-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+  gap: var(--landing-grid-gap);
+  align-items: center;
+}
+.cats-copy p:not(.eyebrow) { margin: 0 0 12px; color: var(--text-2); }
+.cat-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(76px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+.cat-preview img {
+  display: block;
+  width: min(100%, 112px);
+  margin-inline: auto;
+  image-rendering: pixelated;
+}
+
+/* Кот не стоит столбиком: лёгкое дыхание на transform, без walker и без
+   десятка фоновых эффектов. Reduced motion выключает это ниже. */
+@keyframes idle-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.hero-cat .cat-hero,
+.cat-preview img {
+  animation: idle-bob 2.4s cubic-bezier(.45, 0, .55, 1) infinite;
+}
+.cat-preview img:nth-child(2) { animation-delay: .22s; }
+.cat-preview img:nth-child(3) { animation-delay: .44s; }
+.cat-preview img:nth-child(4) { animation-delay: .66s; }
+.cat-preview img:nth-child(5) { animation-delay: .88s; }
+.cat-preview img:nth-child(6) { animation-delay: 1.1s; }
+
+.section-heading { max-width: 720px; margin: 0 auto 24px; }
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--landing-grid-gap);
+  margin-top: 28px;
+}
+.platform-card { padding: clamp(20px, 3vw, 28px); }
+.platform-card h3 { margin: 10px 0 8px; font-size: 24px; line-height: 1.15; }
+.platform-card p { margin: 0; color: var(--text-2); font-size: 19px; }
+.platform-card .status {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  background: var(--surface-strong);
+  clip-path: var(--shape);
+}
+.platform-card .status.now { background: var(--success); color: #1c1f29; }
+.platform-card .status.soon { background: var(--warning); color: #1c1f29; }
+.platform-card.pending h3 { color: var(--text-2); }
+.platform-card.pending p { color: var(--text-3); }
+.platform-note { margin: 22px 0 0; color: var(--text-2); font-size: 19px; }
+
+@media (max-width: 760px) {
+  header.site.home-header .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 8px;
+    min-height: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .home-header .brand { grid-column: 1; grid-row: 1; }
+  .home-header nav.site {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin: 0;
+    justify-content: stretch;
+  }
+  .cat-say:empty { display: none; }
+  .hero-cat-stage { min-height: 0; }
+  .platform-grid { grid-template-columns: 1fr; }
+  .home-header .lang { grid-column: 2; grid-row: 1; justify-self: end; }
+  .hero-intro, .privacy-proof, .cats-layout { grid-template-columns: 1fr; }
+  .hero-copy { text-align: center; margin-inline: auto; }
+  .landing-hero .note { margin-inline: auto; }
+  .hero-cat-stage { min-height: 260px; margin-top: 10px; }
+  .privacy-proof { gap: 12px; }
+  .cats-copy { text-align: center; }
+}
+
+@media (max-width: 560px) {
+  .home { --landing-section-space: 48px; --landing-grid-gap: 16px; }
+  header.site.home-header .wrap { padding-inline: 14px; }
+  .home-header .brand { font-size: 23px; }
+  .home-header nav.site { gap: 0; font-size: 17px; }
+  .home-header nav.site a { justify-content: center; padding-inline: 4px; }
+  .landing-hero { padding-top: 38px; }
+  .landing-hero h1 { font-size: clamp(28px, 7.4vw, 46px); }
+  .landing-hero .note { max-width: 16em; }
+  .hero-cat-stage { min-height: 244px; }
+  .hero-cat { min-height: 204px; }
+  .hero-cat .cat-hero { width: 156px; height: 156px; }
+  .feature-grid { grid-template-columns: 1fr; margin-top: 22px; }
+  .cat-preview { grid-template-columns: repeat(3, minmax(64px, 1fr)); gap: 6px; }
 }
 
 /* ---------- подвал ---------- */
@@ -305,8 +575,16 @@ footer.site {
   padding: 24px 0 28px; font-size: 18px; color: var(--text-3);
 }
 footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
-footer.site nav a { color: var(--text-2); text-decoration: none; }
-footer.site nav a:hover { color: var(--accent); }
+footer.site nav a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--text-2);
+  text-decoration: none;
+}
+footer.site nav a:hover { color: var(--accent-text); }
 footer.site p { margin: 6px 0; }
 .pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
 .pay-methods span { --fill: var(--surface); padding: 5px 12px; font-size: 17px; color: var(--text-2); }
@@ -314,7 +592,11 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
 .social-footer-title { color: var(--text-2); font-weight: 700; }
 .social-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .social-link {
-  display: inline-block;
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  box-sizing: border-box;
   padding: 5px 10px;
   color: var(--text-2);
   text-decoration: none;
@@ -322,7 +604,8 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
   border: 2px solid var(--ink);
   clip-path: var(--shape);
 }
-.social-link:hover { color: var(--accent); }
+.social-link:hover { color: var(--accent-text); }
+.social-link:focus-visible { clip-path: none; }
 
 /* ---------- загрузка приложения ---------- */
 
@@ -428,124 +711,18 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
   to { transform: translateX(325%); }
 }
 
-/* ---------- маленькие радости ----------
-   Всё, что двигается, отключается при prefers-reduced-motion. */
-
-/* Коты не стоят на месте. Движение плавное, на transform — его считает
-   композитор, поэтому анимация не дёргается даже на слабых машинах. */
-@keyframes idle-bob {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-/* Мягкая синусоида: наверху и внизу кот чуть задерживается, как при дыхании */
-.cat-hero, .split .art img, .cat-strip img {
-  animation-name: idle-bob;
-  animation-duration: 2.4s;
-  animation-timing-function: cubic-bezier(.45, 0, .55, 1);
-  animation-iteration-count: infinite;
-  will-change: transform;
-}
-.split .art img { animation-duration: 2.8s; }
-.band .split .art img { animation-delay: .9s; }
-
-/* Ряд котов идёт волной, каждый со своей задержкой */
-.cat-strip img { cursor: pointer; }
-.cat-strip img:nth-child(1)  { animation-delay: 0s; }
-.cat-strip img:nth-child(2)  { animation-delay: .16s; }
-.cat-strip img:nth-child(3)  { animation-delay: .32s; }
-.cat-strip img:nth-child(4)  { animation-delay: .48s; }
-.cat-strip img:nth-child(5)  { animation-delay: .64s; }
-.cat-strip img:nth-child(6)  { animation-delay: .8s; }
-.cat-strip img:nth-child(7)  { animation-delay: .96s; }
-.cat-strip img:nth-child(8)  { animation-delay: 1.12s; }
-.cat-strip img:nth-child(9)  { animation-delay: 1.28s; }
-.cat-strip img:nth-child(10) { animation-delay: 1.44s; }
-.cat-strip img:nth-child(11) { animation-delay: 1.6s; }
-.cat-strip img:nth-child(12) { animation-delay: 1.76s; }
-.cat-strip img:nth-child(13) { animation-delay: 1.92s; }
-.cat-strip img:nth-child(14) { animation-delay: 2.08s; }
-
-/* Наводишь — кот подпрыгивает выше обычного и мягко приземляется */
-.cat-strip img:hover { animation: hop .6s cubic-bezier(.34, 1.4, .64, 1) 1; }
-@keyframes hop {
-  0%   { transform: translateY(0); }
-  35%  { transform: translateY(-24px); }
-  100% { transform: translateY(0); }
-}
-
-/* Кот гуляет по нижнему краю первого экрана и разворачивается у стенок.
-   Едет на transform, а не на left: left пересчитывает раскладку героя каждый
-   кадр, и на части машин кнопка "Скачать" из-за этого теряла свою drop-shadow
-   через кадр - тень мерцала. Ширину прогона в пикселях кладёт fun.js, потому
-   что проценты в translateX меряются по самому коту, а не по герою. */
-.hero { position: relative; overflow: hidden; }
-.walker {
-  position: absolute; bottom: 0; left: 0;
-  width: 58px; image-rendering: pixelated; pointer-events: none;
-  animation: walk 26s linear infinite;
-  will-change: transform;
-}
-@keyframes walk {
-  0%   { transform: translateX(-70px) scaleX(1); }
-  49%  { transform: translateX(var(--walk-span, 100vw)) scaleX(1); }
-  50%  { transform: translateX(var(--walk-span, 100vw)) scaleX(-1); }
-  99%  { transform: translateX(-70px) scaleX(-1); }
-  100% { transform: translateX(-70px) scaleX(1); }
-}
-
-/* Кот в герое кликабельный — по клику говорит */
-.cat-hero { cursor: pointer; }
-.cat-say {
-  position: relative;
-  margin: 0 auto 10px;
-  max-width: 340px;
-  padding: 10px 16px;
-  font-size: 19px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .18s ease, transform .18s ease;
-}
-.cat-say.visible { opacity: 1; transform: translateY(0); }
-
-/* Появление блоков при прокрутке */
-.reveal { opacity: 0; transform: translateY(14px); }
-.reveal.shown { opacity: 1; transform: translateY(0); transition: opacity .45s ease, transform .45s ease; }
-
-/* Ачивка в стиле приложения */
-.achievement {
-  position: fixed; right: 20px; bottom: 20px; z-index: 50;
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 18px; max-width: min(340px, calc(100vw - 40px));
-  opacity: 0; transform: translateY(12px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-.achievement.shown { opacity: 1; transform: translateY(0); }
-.achievement .emoji { font-size: 26px; line-height: 1; }
-.achievement .title { font-weight: 700; font-size: 19px; }
-.achievement .desc { color: var(--text-2); font-size: 17px; }
-
 @media (prefers-reduced-motion: reduce) {
-  .cat-hero, .split .art img, .cat-strip img, .cat-strip img:hover, .walker { animation: none; }
+  .hero-cat .cat-hero, .cat-preview img,
   .download-cat, .download-spark, .download-progress span { animation: none; }
   .download-progress span { left: 0; width: 100%; }
-  .walker { display: none; }
-  .reveal, .reveal.shown, .cat-say, .achievement { opacity: 1; transform: none; transition: none; }
-}
-
-@media (max-width: 760px) {
-  .split { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding-block: 44px 32px; }
-  nav.site { width: 100%; margin-left: 0; gap: 14px; }
+  header.site:not(.home-header) nav.site { width: 100%; margin-left: 0; gap: 14px; }
   /* Пальцем в 14×26 не попасть — растим области нажатия */
-  nav.site a, footer.site nav a { display: inline-block; padding: 6px 2px; }
-  .lang { font-size: 19px; }
-  .lang a { display: inline-block; padding: 6px 8px; }
+  header.site:not(.home-header) nav.site a, footer.site nav a { display: inline-block; padding: 6px 2px; }
+  header.site:not(.home-header) .lang { font-size: 19px; }
+  header.site:not(.home-header) .lang a { display: inline-block; padding: 6px 8px; }
   .download-page { padding: 16px; }
   .download-panel { grid-template-columns: 1fr; gap: 14px; text-align: center; }
   .download-cat-scene { min-height: 160px; }
