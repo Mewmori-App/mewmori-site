@@ -1,6 +1,6 @@
 MEWMORI PRESS KIT
 
-Mewmori 1.0.21
+Mewmori 1.0.25
 https://mewmori.com
 
 ============================================================
@@ -30,10 +30,10 @@ FACT SHEET
 ============================================================
 
 What it is      A macOS desktop pet with a local language model and long-term memory
-Version         1.0.21
+Version         1.0.25
 System          macOS 14.6 or newer
 Processor       Universal binary: Apple Silicon and Intel
-Size            27.8 MB download, about 47 MB on disk
+Size            29 MB download, about 50 MB on disk
 Model           Qwen 3.5 (2B), 1.4 GB — downloaded separately and only with consent; the cat works without it
 Memory          4 GB RAM or more for conversations
 Memory in use   About 400 MB with the model loaded — preliminary measurement on a MacBook Pro M3 Max

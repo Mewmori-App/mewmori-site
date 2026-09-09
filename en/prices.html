@@ -16,20 +16,22 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site">
   <div class="wrap">
     <a class="brand" href="./"><img src="../assets/icon.png" alt=""> Mewmori</a>
-    <nav class="site">
+    <nav class="site" aria-label="Main navigation">
       <a href="./#cats">Cats</a>
+      <a href="./#platforms">Platforms</a>
       <a href="prices.html">Pricing</a>
-      <a href="payment.html">Payment</a>
       <a href="contacts.html">Contacts</a>
     </nav>
-    <span class="lang"><a href="../prices.html" data-lang="ru">RU</a><span>/</span><a href="#" data-lang="en" aria-current="true">EN</a></span>
+    <nav class="lang" aria-label="Language selection"><a href="../prices.html" data-lang="ru" lang="ru">RU</a><span aria-hidden="true">/</span><span aria-current="page">EN</span></nav>
   </div>
 </header>
 
-<main class="wrap legal">
+<main id="main-content" class="wrap legal" tabindex="-1">
   <h1>Pricing</h1>
   <p class="updated">Updated 4 August 2026</p>
 
@@ -37,7 +39,17 @@
   accessories and bundles. Prices are in Telegram Stars: outside Russia you buy in the
   <a href="https://t.me/mewmori_shop_bot">@mewmori_shop_bot</a> bot, and Telegram requires
   digital goods to be sold in Stars. A purchase is perpetual and works on every computer
-  you own; there is no subscription and no recurring charge.</p>
+  you own; there is no subscription and no recurring charge. The app is for macOS today;
+  <a href="./#platforms">Windows and Linux are in progress</a>.</p>
+
+  <div class="cat-preview" aria-label="Some of the Mewmori cats" style="margin: 8px 0 28px; max-width: 520px">
+    <img src="../assets/cats/classic_cat.png" alt="Classic cat">
+    <img src="../assets/cats/ginger_fold_cat.png" alt="Ginger fold">
+    <img src="../assets/cats/siamese_cat.png" alt="Siamese cat">
+    <img src="../assets/cats/calico_cat.png" alt="Calico cat">
+    <img src="../assets/cats/munchkin_cat.png" alt="Munchkin cat">
+    <img src="../assets/cats/sphynx_cat.png" alt="Sphynx cat">
+  </div>
 
 <!-- catalog:start -->
   <h2>Cat skins</h2>
@@ -133,7 +145,7 @@
   </div>
 
   <p>The key is cumulative: it carries all of your purchases at once and works on any number
-  of your Macs. Lost it? Send <code>/restore</code> to the bot and it reissues the key for
+  of your computers. Lost it? Send <code>/restore</code> to the bot and it reissues the key for
   your Telegram account. If you paid by card instead, restore it
   <a href="https://mewmori-checkout.mewmori.workers.dev/restore">by email</a>.</p>
 
@@ -162,7 +174,7 @@
     <section class="social-footer" aria-labelledby="social-footer-title">
       <p id="social-footer-title" class="social-footer-title">Mewmori online</p>
       <div class="social-links">
-        <a class="social-link" href="https://www.youtube.com/channel/UCOPSPxoBH47BL3bi24bNYUg" target="_blank" rel="noopener noreferrer">YouTube</a><a class="social-link" href="https://www.tiktok.com/@mewmori.app" target="_blank" rel="noopener noreferrer">TikTok</a><a class="social-link" href="https://www.instagram.com/mewmori.app/" target="_blank" rel="noopener noreferrer">Instagram</a><a class="social-link" href="https://x.com/mewmori_app" target="_blank" rel="noopener noreferrer">X</a><a class="social-link" href="https://www.reddit.com/user/mewmori-app/" target="_blank" rel="noopener noreferrer">Reddit</a><a class="social-link" href="https://mewmori.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a><a class="social-link" href="https://discord.gg/R4tMCwC2a" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a class="social-link" href="https://www.youtube.com/channel/UCOPSPxoBH47BL3bi24bNYUg" target="_blank" rel="noopener noreferrer">YouTube</a><a class="social-link" href="https://www.tiktok.com/@mewmori.app" target="_blank" rel="noopener noreferrer">TikTok</a><a class="social-link" href="https://www.instagram.com/mewmori.app/" target="_blank" rel="noopener noreferrer">Instagram</a><a class="social-link" href="https://x.com/mewmori_app" target="_blank" rel="noopener noreferrer">X</a><a class="social-link" href="https://www.reddit.com/user/mewmori-app/" target="_blank" rel="noopener noreferrer">Reddit</a><a class="social-link" href="https://mewmori.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a><a class="social-link" href="https://discord.gg/FHwmPgEfx" target="_blank" rel="noopener noreferrer">Discord</a>
       </div>
     </section>
     <div class="pay-methods">

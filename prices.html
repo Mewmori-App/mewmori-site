@@ -16,27 +16,39 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">К содержанию</a>
+
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="assets/icon.png" alt=""> Mewmori</a>
-    <nav class="site">
+    <nav class="site" aria-label="Главная навигация">
       <a href="index.html#cats">Коты</a>
+      <a href="index.html#platforms">Платформы</a>
       <a href="prices.html">Цены</a>
-      <a href="payment.html">Оплата</a>
       <a href="contacts.html">Контакты</a>
     </nav>
-    <span class="lang"><a href="#" data-lang="ru" aria-current="true">RU</a><span>/</span><a href="en/prices.html" data-lang="en">EN</a></span>
+    <nav class="lang" aria-label="Выбор языка"><span aria-current="page">RU</span><span aria-hidden="true">/</span><a href="en/prices.html" data-lang="en" lang="en">EN</a></nav>
   </div>
 </header>
 
-<main class="wrap legal">
+<main id="main-content" class="wrap legal" tabindex="-1">
   <h1>Цены</h1>
   <p class="updated">Обновлено 4 августа 2026 г.</p>
 
   <p>Само приложение Mewmori бесплатное. За плату открываются дополнительные цифровые
   предметы: скины кота, аксессуары и наборы. Все цены указаны в рублях Российской Федерации
   и включают все налоги. Покупка бессрочная и действует на всех компьютерах покупателя;
-  подписки и повторных списаний нет.</p>
+  подписки и повторных списаний нет. Сейчас приложение для macOS;
+  <a href="index.html#platforms">Windows и Linux в работе</a>.</p>
+
+  <div class="cat-preview" aria-label="Некоторые коты Mewmori" style="margin: 8px 0 28px; max-width: 520px">
+    <img src="assets/cats/classic_cat.png" alt="Классический кот">
+    <img src="assets/cats/ginger_fold_cat.png" alt="Рыжий вислоух">
+    <img src="assets/cats/siamese_cat.png" alt="Сиамский кот">
+    <img src="assets/cats/calico_cat.png" alt="Калико">
+    <img src="assets/cats/munchkin_cat.png" alt="Манчкин">
+    <img src="assets/cats/sphynx_cat.png" alt="Сфинкс">
+  </div>
 
 <!-- catalog:start -->
   <h2>Скины кота</h2>
@@ -104,7 +116,7 @@
         <tr><td>Набор ниндзя</td><td>кот «Смокинг» + Повязка ниндзя + Хвост-меч</td><td>299 ₽</td></tr>
         <tr><td>Набор ведьмы</td><td>кот «Чёрный» + Шляпа ведьмы + Мантия волшебника</td><td>399 ₽</td></tr>
         <tr><td>Королевский набор</td><td>кот «Лиловый» + Корона + Броня рыцаря</td><td>649 ₽</td></tr>
-        <tr><td>Всё сразу</td><td>Все платные коты (13) и весь платный гардероб (18 предмета)</td><td>1990 ₽</td></tr>
+        <tr><td>Всё сразу</td><td>Все платные коты (13) и весь платный гардероб (18 предметов)</td><td>1990 ₽</td></tr>
       </tbody>
     </table>
   </div>
@@ -130,7 +142,7 @@
   </div>
 
   <p>Ключ кумулятивный: он содержит все твои покупки сразу и работает на любом количестве
-  твоих маков. Потерял — <a href="https://mewmori-checkout.mewmori.workers.dev/restore">восстанови
+  твоих компьютеров. Потерял — <a href="https://mewmori-checkout.mewmori.workers.dev/restore">восстанови
   по email</a>. Покупателям за пределами России доступна оплата Telegram Stars
   в боте <a href="https://t.me/mewmori_shop_bot">@mewmori_shop_bot</a>.</p>
 

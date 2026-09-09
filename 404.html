@@ -15,19 +15,40 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">К содержанию</a>
+
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/icon.png" alt=""> Mewmori</a>
+    <nav class="lang" style="margin-left:auto" aria-label="Выбор языка">
+      <a href="/" data-lang="ru" lang="ru">RU</a><span aria-hidden="true">/</span><a href="/en/" data-lang="en" lang="en">EN</a>
+    </nav>
   </div>
 </header>
 
-<main class="wrap hero">
+<main id="main-content" class="wrap hero" tabindex="-1">
   <img class="cat-hero" src="/assets/cats/black_cat.png" alt="">
   <h1>404</h1>
-  <p class="lead">Кот утащил эту страницу под диван.</p>
-  <div class="buttons"><a class="button" href="/">На главную</a></div>
+  <p class="lead" id="not-found-lead">Кот утащил эту страницу под диван.</p>
+  <div class="buttons"><a class="button" id="not-found-home" href="/">На главную</a></div>
 </main>
 
-<script src="assets/src.js" defer></script>
+<script>
+(function () {
+  if (location.pathname.indexOf('/en/') !== 0) return;
+  document.documentElement.lang = 'en';
+  document.title = 'Page not found — Mewmori';
+  var skip = document.querySelector('.skip-link');
+  if (skip) skip.textContent = 'Skip to content';
+  var lead = document.getElementById('not-found-lead');
+  if (lead) lead.textContent = 'The cat dragged this page under the sofa.';
+  var home = document.getElementById('not-found-home');
+  if (home) {
+    home.textContent = 'Go home';
+    home.setAttribute('href', '/en/');
+  }
+})();
+</script>
+<script src="/assets/src.js" defer></script>
 </body>
 </html>

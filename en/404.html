@@ -10,22 +10,29 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" hreflang="ru" href="https://mewmori.com/404.html">
+<link rel="alternate" hreflang="en" href="https://mewmori.com/en/404.html">
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/en/"><img src="/assets/icon.png" alt=""> Mewmori</a>
+    <nav class="lang" style="margin-left:auto" aria-label="Language selection">
+      <a href="/" data-lang="ru" lang="ru">RU</a><span aria-hidden="true">/</span><span aria-current="page">EN</span>
+    </nav>
   </div>
 </header>
 
-<main class="wrap hero">
+<main id="main-content" class="wrap hero" tabindex="-1">
   <img class="cat-hero" src="/assets/cats/black_cat.png" alt="">
   <h1>404</h1>
   <p class="lead">The cat dragged this page under the sofa.</p>
   <div class="buttons"><a class="button" href="/en/">Go home</a></div>
 </main>
 
-<script src="../assets/src.js" defer></script>
+<script src="/assets/src.js" defer></script>
 </body>
 </html>

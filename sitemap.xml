@@ -8,18 +8,60 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/press.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/press.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/press.html"/></url>
-  <url><loc>https://mewmori.com/prices.html</loc><priority>0.8</priority></url>
-  <url><loc>https://mewmori.com/payment.html</loc><priority>0.6</priority></url>
-  <url><loc>https://mewmori.com/refund.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/offer.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/privacy.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/contacts.html</loc><priority>0.6</priority></url>
-  <url><loc>https://mewmori.com/en/</loc><priority>1.0</priority></url>
-  <url><loc>https://mewmori.com/en/press.html</loc><priority>0.8</priority></url>
-  <url><loc>https://mewmori.com/en/prices.html</loc><priority>0.8</priority></url>
-  <url><loc>https://mewmori.com/en/payment.html</loc><priority>0.6</priority></url>
-  <url><loc>https://mewmori.com/en/refund.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/en/offer.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/en/privacy.html</loc><priority>0.5</priority></url>
-  <url><loc>https://mewmori.com/en/contacts.html</loc><priority>0.6</priority></url>
+  <url><loc>https://mewmori.com/prices.html</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/prices.html"/></url>
+  <url><loc>https://mewmori.com/payment.html</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/payment.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/payment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/payment.html"/></url>
+  <url><loc>https://mewmori.com/refund.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/refund.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/refund.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/refund.html"/></url>
+  <url><loc>https://mewmori.com/offer.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/offer.html"/></url>
+  <url><loc>https://mewmori.com/privacy.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/privacy.html"/></url>
+  <url><loc>https://mewmori.com/contacts.html</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/contacts.html"/></url>
+  <url><loc>https://mewmori.com/en/</loc><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/"/></url>
+  <url><loc>https://mewmori.com/en/press.html</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/press.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/press.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/press.html"/></url>
+  <url><loc>https://mewmori.com/en/prices.html</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/prices.html"/></url>
+  <url><loc>https://mewmori.com/en/payment.html</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/payment.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/payment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/payment.html"/></url>
+  <url><loc>https://mewmori.com/en/refund.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/refund.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/refund.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/refund.html"/></url>
+  <url><loc>https://mewmori.com/en/offer.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/offer.html"/></url>
+  <url><loc>https://mewmori.com/en/privacy.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/privacy.html"/></url>
+  <url><loc>https://mewmori.com/en/contacts.html</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/contacts.html"/></url>
 </urlset>

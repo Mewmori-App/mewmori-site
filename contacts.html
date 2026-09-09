@@ -16,20 +16,22 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">К содержанию</a>
+
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="assets/icon.png" alt=""> Mewmori</a>
-    <nav class="site">
+    <nav class="site" aria-label="Главная навигация">
       <a href="index.html#cats">Коты</a>
+      <a href="index.html#platforms">Платформы</a>
       <a href="prices.html">Цены</a>
-      <a href="payment.html">Оплата</a>
       <a href="contacts.html">Контакты</a>
     </nav>
-    <span class="lang"><a href="#" data-lang="ru" aria-current="true">RU</a><span>/</span><a href="en/contacts.html" data-lang="en">EN</a></span>
+    <nav class="lang" aria-label="Выбор языка"><span aria-current="page">RU</span><span aria-hidden="true">/</span><a href="en/contacts.html" data-lang="en" lang="en">EN</a></nav>
   </div>
 </header>
 
-<main class="wrap narrow legal">
+<main id="main-content" class="wrap narrow legal" tabindex="-1">
   <h1>Контакты и реквизиты</h1>
   <p class="updated">Обновлено 4 августа 2026 г.</p>
 

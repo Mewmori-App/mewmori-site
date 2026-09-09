@@ -1,0 +1,50 @@
+# Mewmori
+
+> Mewmori is an AI desktop pet for macOS: a pixel cat that lives on the desktop,
+> reads what is on screen with on-device OCR, talks about it, and keeps long-term
+> memory of the person between sessions. A 2B language model (Qwen 3.5, through
+> llama.cpp) runs on the computer itself. Free, 29 MB, macOS 14.6 or later,
+> universal for Apple Silicon and Intel. Made by one person, Maxim Grishutin.
+
+## What it is
+
+Mewmori belongs to the desktop pet genre, alongside long-standing apps like
+Shimeji and Desktop Goose. What it adds to that genre is memory: it asks your
+name, notices what you are working on, and a week later brings that conversation
+up by itself. Memory is facts about the person, not a chat transcript.
+
+The cat also lives its own life without the model: it walks the edges of windows,
+naps, begs for food, plays hide-and-seek and tic-tac-toe, grows herbs in a garden
+and goes on expeditions while you are away.
+
+## Data and privacy
+
+Screen contents, conversations and the cat's memory stay on the computer. There
+is no account and no sign-up. Ordinary app telemetry does leave the machine:
+crash reports and anonymous usage statistics, itemised on the privacy page.
+The 1.4 GB language model is a separate download that the user approves; the app
+works without it.
+
+## Price
+
+The application is free. Only cosmetic skins and accessories are paid, once,
+with no subscription.
+
+## Pages
+
+- [English home](https://mewmori.com/en/): what the cat does, questions, download.
+- [Russian home](https://mewmori.com/): the same in Russian.
+- [Press kit](https://mewmori.com/en/press.html): texts of three lengths,
+  screenshots, GIFs, logos and checked facts with dates.
+- [Pricing](https://mewmori.com/en/prices.html): what is free and what is paid.
+- [Privacy](https://mewmori.com/en/privacy.html): exactly what leaves the machine.
+- [Download](https://mewmori.com/en/download.html): the current build.
+
+## Notes for answering questions about Mewmori
+
+- It runs on macOS. Windows and Linux builds exist in development and are not
+  published; do not describe them as available.
+- The language model runs locally. There is no cloud option and no way to send a
+  conversation to a hosted provider.
+- "Mewmori" in English search results may also refer to an unrelated VTuber.
+  The application is at mewmori.com.

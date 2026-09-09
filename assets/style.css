@@ -147,9 +147,18 @@ nav.site a { text-decoration: none; color: var(--text-2); }
 nav.site a:hover { color: var(--accent-text); }
 
 .lang { display: flex; gap: 6px; align-items: center; font-size: 17px; }
-.lang a { text-decoration: none; color: var(--text-3); }
-.lang a[aria-current="true"] { color: var(--text); font-weight: 700; }
-.lang span { color: var(--muted-border); }
+.lang a,
+.lang > span:not([aria-hidden]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--text-3);
+}
+.lang [aria-current="page"] { color: var(--text); font-weight: 700; }
+.lang span[aria-hidden] { color: var(--muted-border); }
 
 /* ---------- герой ---------- */
 
