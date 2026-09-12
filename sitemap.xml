@@ -64,4 +64,12 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/contacts.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/contacts.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/contacts.html"/></url>
+  <url><loc>https://mewmori.com/update.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/update.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/update.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/update.html"/></url>
+  <url><loc>https://mewmori.com/en/update.html</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/update.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/update.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/update.html"/></url>
 </urlset>
