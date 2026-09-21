@@ -737,3 +737,15 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
   .download-cat-scene { min-height: 160px; }
   .download-cat { width: 132px; }
 }
+
+/* Бейдж Product Hunt в подвале. Тёмный вариант отдаётся картинкой, а не
+   фильтром: у бейджа свои цвета, и инверсия портит оранжевый логотип. */
+.ph-badge {
+  display: inline-block;
+  margin: 18px auto 0;
+}
+.ph-badge img {
+  display: block;
+  width: 250px;
+  height: 54px;
+}
