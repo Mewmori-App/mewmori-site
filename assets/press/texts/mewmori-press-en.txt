@@ -1,6 +1,6 @@
 MEWMORI PRESS KIT
 
-Mewmori 1.0.25
+Mewmori 1.0.28
 https://mewmori.com
 
 ============================================================
@@ -33,14 +33,14 @@ What it is      A macOS desktop pet with a local language model and long-term me
 Version         1.0.25
 System          macOS 14.6 or newer
 Processor       Universal binary: Apple Silicon and Intel
-Size            29 MB download, about 50 MB on disk
+Size            26 MB download, about 50 MB on disk
 Model           Qwen 3.5 (2B), 1.4 GB — downloaded separately and only with consent; the cat works without it
 Memory          4 GB RAM or more for conversations
 Memory in use   About 400 MB with the model loaded — preliminary measurement on a MacBook Pro M3 Max
 Privacy         Replies, screen contents and memories never leave the computer
 Account         None. No sign-up; a purchase lives in a licence key
 Price           The app is free. Only skins and accessories are paid, 99–1990 ₽ (90–1780 ⭐ in Telegram Stars), one-time
-Contents        15 cats, 22 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
+Contents        16 cats, 26 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
 Languages       Russian and English, following the system language
 Updates         Sparkle, in-app
 Developer       Maxim Grishutin, a one-person project
