@@ -14,20 +14,22 @@
      per channel: the app cannot do it, because no `mewmori://` link is ever
      opened along this path (docs/GO_TO_MARKET.md §5.1 in the main repository). -->
 <meta http-equiv="refresh" content="1; url=https://mewmori-checkout.mewmori.workers.dev/go">
-<!-- The channel tag from the page address is appended to that same target. The
+<!-- The channel tag (or the referrer host, see assets/src.js) is appended to that same target. The
      script edits the redirect rather than performing one of its own: two
      navigations mean two downloads for a visitor. A browser that ignores the
      edit downloads exactly the same file and is counted as organic — the tag is
      lost, the download is not. -->
+<script src="../assets/src.js"></script>
 <script>
 (function () {
-  var src = new URLSearchParams(window.location.search).get('src');
-  if (!src || !/^[a-z][a-z0-9-]{0,31}$/.test(src)) return;
+  var attribution = window.mewmoriAttribution;
+  if (!attribution) return;
 
   var meta = document.querySelector('meta[http-equiv="refresh"]');
   meta.setAttribute(
     'content',
-    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?src=' + encodeURIComponent(src)
+    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?' +
+      attribution.name + '=' + encodeURIComponent(attribution.value)
   );
 })();
 </script>

@@ -14,19 +14,21 @@
      не умеет, потому что `mewmori://` на этом пути не открывается никогда
      (docs/GO_TO_MARKET.md §5.1 в основном репозитории). -->
 <meta http-equiv="refresh" content="1; url=https://mewmori-checkout.mewmori.workers.dev/go">
-<!-- Метка канала из адреса страницы дописывается сюда же. Скрипт правит цель
+<!-- Метка канала (или хост реферера, см. assets/src.js) дописывается сюда же. Скрипт правит цель
      перехода, а не делает свой: два перехода — это две загрузки у человека.
      Браузер, который правку проигнорирует, скачает всё то же самое и попадёт в
      счёт как органика — теряется метка, но не скачивание. -->
+<script src="assets/src.js"></script>
 <script>
 (function () {
-  var src = new URLSearchParams(window.location.search).get('src');
-  if (!src || !/^[a-z][a-z0-9-]{0,31}$/.test(src)) return;
+  var attribution = window.mewmoriAttribution;
+  if (!attribution) return;
 
   var meta = document.querySelector('meta[http-equiv="refresh"]');
   meta.setAttribute(
     'content',
-    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?src=' + encodeURIComponent(src)
+    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?' +
+      attribution.name + '=' + encodeURIComponent(attribution.value)
   );
 })();
 </script>
