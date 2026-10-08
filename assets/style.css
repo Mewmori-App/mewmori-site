@@ -598,6 +598,8 @@ footer.site p { margin: 6px 0; }
 .pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
 .pay-methods span { --fill: var(--surface); padding: 5px 12px; font-size: 17px; color: var(--text-2); }
 footer.site .social-footer { margin: 12px 0; padding-block: 0; }
+footer.site .thanks-footer a { color: var(--text-2); }
+footer.site .thanks-footer a:hover { color: var(--accent-text); }
 .social-footer-title { color: var(--text-2); font-weight: 700; }
 .social-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .social-link {
